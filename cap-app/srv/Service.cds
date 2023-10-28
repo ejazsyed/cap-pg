@@ -4,7 +4,16 @@ using {cap_app_pg as cpg} from '../db/Schema';
 service StudentService {
 
 
-    entity Student as projection on cpg.Student;
+    entity Student @(restrict: [
+        {
+            grant: ['READ'],
+            to   : ['StudentViewer']
+        },
+        {
+            grant: ['*'],
+            to   : ['StudentAdmin']
+        }
+    ]) as projection on cpg.Student;
 
     annotate Student with @odata.draft.enabled;
 }

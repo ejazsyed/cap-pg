@@ -12,6 +12,8 @@ Add some mock data as csv format under db/data folder. The file format should be
 ### Step 4:
 Test the service using `cds watch`
 
+### Step 5:
+Add user authorization to Service.cds file
 
 
 
