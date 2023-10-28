@@ -1,1 +1,21 @@
-{}
+{
+  "[development]": {
+    "auth": {
+      "passport": {
+        "strategy": "mock",
+        "users": {
+          "StudentViewer": {
+            "ID": "StudentViewer",
+            "password": "12345",
+            "roles": ["StudentViewer"]
+          },
+          "StudentAdmin": {
+            "ID": "StudentAdmin",
+            "password": "12345",
+            "roles": ["StudentAdmin"]
+          }
+        }
+      }
+    }
+  }
+}

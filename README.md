@@ -15,6 +15,9 @@ Test the service using `cds watch`
 ### Step 5:
 Add user authorization to Service.cds file
 
+### Step 6:
+Add local test user to .cdsrc.json
+
 
 
 
