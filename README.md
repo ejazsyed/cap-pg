@@ -75,10 +75,9 @@ Create two files under cap-app
 A few corrections are required for mta.yaml file.
 
 1. As the app I am planning to deploy in BTP trial (AWS). So the service plan should be 'Trial'.
-2. rename the postgres instance name to 'cpapp-postgres' - done becuase I already create Postgresql instance in BTP with this name.
-3. changed the type from `type: org.cloudfoundry.managed-service` to `type: org.cloudfoundry.managed-service`
-4. Under mta.yaml -> Builder section, Add pg-build.sh
-5. Finally run `mbt build` to create mtar file
+2. rename the postgres instance name to 'cap-app-postgres' - done becuase I already created Postgresql instance in BTP with this name.
+3. Under mta.yaml -> Builder section, Add pg-build.sh
+4. Finally run `mbt build` to create mtar file
 
 ### Step 15:
 
