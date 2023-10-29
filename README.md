@@ -19,7 +19,7 @@ Add user authorization to Service.cds file
 Add local test user to .cdsrc.json
 
 ### Step 7:
-Add docker-compose.yml under cap-pg -> This will create a docker image. The following command `docker compose up` will create the container within which Postgresql will run as a db server
+Add docker-compose.yml under cap-pg -> This will create a docker image. The following command `docker compose up` will create the container within which Postgresql will run as a db server. Make sure the docker desktop is up and running else image download and container creation will fail!
 
 ### Step 8: 
 
