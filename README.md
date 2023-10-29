@@ -105,12 +105,12 @@ using POSTMAN with oAuth2.0 authentication
 ### Step 18:
 Enable SSH to access BTP DB from 
 
-1. Execute command `cf enable-ssh cap-app-srv`
-2. Restart the App `cf restart cap-app-srv`
-3. Create a service key for Postgresql instance - `cf create-service-key cap-app-postgres srv_key`
-4. Display service key details - `cf service-key cap-app-postgres srv_key`
+1. Execute command `cf enable-ssh <app name>`
+2. Restart the App `cf restart <app name>`
+3. Create a service key for Postgresql instance - `cf create-service-key <postgresql instance name> srv_key`
+4. Display service key details - `cf service-key <postgresql instance name> srv_key`
 5. Create the SSH Tunnel - `cf ssh -L 63306:<postgress-instance-host-name>:<pg-instance-port-name> <app-name>`
-6. You need to install Postgresql cli client - `choco insall postgres14`
+6. You need to install Postgresql cli client - `choco install postgres14`
 7. Finally access the database service locally from command prompt - `psql -d <dbname> -U <user name> -p 63306 -h localhost`
 
 ### Step 19:
