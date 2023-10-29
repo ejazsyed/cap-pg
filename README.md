@@ -76,9 +76,8 @@ A few corrections are required for mta.yaml file.
 
 1. As the app I am planning to deploy in BTP trial (AWS). So the service plan should be 'Trial'.
 2. rename the postgres instance name to 'cpapp-postgres' - done becuase I already create Postgresql instance in BTP with this name.
-3. changed the type from `type: org.cloudfoundry.managed-service` to `type: org.cloudfoundry.managed-service`
-4. Under mta.yaml -> Builder section, Add pg-build.sh
-5. Finally run `mbt build` to create mtar file
+3. Under mta.yaml -> Builder section, Add pg-build.sh
+4. Finally run `mbt build` to create mtar file
 
 ### Step 15:
 
@@ -87,3 +86,16 @@ Deploy previously generated mtar file into cloud foundry
 2. `cf deploy mta_archives/cap-app_1.0.0.mtar`
 
 Backend service will be successfuly uploaded to BTP
+
+### Step 16:
+
+Add role for user in BTP
+
+A. Go to Trial Sub Account -> Security -> Role Collection -> Create new role collection
+
+B. Edit the role collection and add the required roles as mainatined under xs-security.json (StudentAdmin & StudentViewer)
+
+C.Add user ID and finally save
+
+### Test Service
+using POSTMAN with oAuth2.0 authentication 

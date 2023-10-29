@@ -8,7 +8,7 @@ build-parameters:
   before-all:
     - builder: custom
       commands:
-        - npx cds build --production
+        - cds build --production
         - bash ./pg-build.sh
 modules:
   - name: cap-app-srv
@@ -35,14 +35,16 @@ modules:
       no-start: true
       disk-quota: 1GB
       memory: 256MB
-    build-parameters:
-      ignore: ["node_modules/"]
       tasks:
-      - name: deploy-to-postgresql
-        command: npm start
+        - name: deploy-to-postgresql
+          command: npm start
+          disk-quota: 1GB
+          memory: 256MB
+    build-parameters:
+      ignore:
+        - "node_modules/"
     requires:
       - name: cap-app-postgres
-
 resources:
   - name: cap-app-auth
     type: org.cloudfoundry.managed-service
