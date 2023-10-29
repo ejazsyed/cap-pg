@@ -10,7 +10,7 @@ Add Schema.cds undr db and Service.cds under srv folder respectively
 
 ### Step 3:
 
-Add some mock data as csv format under db/data folder. The file format should be <namespace_entityt.csv>
+Add some mock data as csv format under db/data folder. The file format should be <namespace_entity.csv>
 
 ### Step 4:
 
@@ -97,5 +97,39 @@ B. Edit the role collection and add the required roles as mainatined under xs-se
 
 C.Add user ID and finally save
 
-### Test Service
+### Step 17:
+
+Test Service ==>
 using POSTMAN with oAuth2.0 authentication 
+
+### Step 18:
+Enable SSH to access BTP DB from 
+
+1. Execute command `cf enable-ssh cap-app-srv`
+2. Restart the App `cf restart cap-app-srv`
+3. Create a service key for Postgresql instance - `cf create-service-key cap-app-postgres srv_key`
+4. Display service key details - `cf service-key cap-app-postgres srv_key`
+5. Create the SSH Tunnel - `cf ssh -L 63306:<postgress-instance-host-name>:<pg-instance-port-name> <app-name>`
+6. You need to install Postgresql cli client - `choco insall postgres14`
+7. Finally access the database service locally from command prompt - `psql -d <dbname> -U <user name> -p 63306 -h localhost`
+
+### Step 19:
+
+psql commands to check database entries
+
+* psql number of database available 
+> select datname from pg_catalog.pg_database; 
+
+* to switch to table
+> \c 'db name' 
+
+* To check available tables
+>\dt; 
+
+* fetch records
+
+> select * from 'table';
+
+* insert new record
+
+> insert into 'table' (field1, field2, field3) values ('val1', 'val2', 'val3');
