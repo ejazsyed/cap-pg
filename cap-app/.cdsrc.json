@@ -4,10 +4,10 @@
       "kind": "postgres",
       "impl": "@cap-js/postgres",
       "credentials": {
-        "host": "localhost",
+        "host": "syed-hadr-db.cuk4pu8myzcz.us-east-1.rds.amazonaws.com",
         "port": 5432,
         "user": "postgres",
-        "password": "postgres",
+        "password": "ngNFUQijohq2opXRZ71a",
         "database": "Student"
       }
     }
